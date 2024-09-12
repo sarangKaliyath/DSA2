@@ -1,4 +1,4 @@
-package advance;
+package advance.ModularArithematicsAndGcd;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -100,7 +100,6 @@ public class PairSumDivisibleByM {
 
         int ans = res % mod;
 
-        System.out.println("ans : " + ans);
 
     }
 }
