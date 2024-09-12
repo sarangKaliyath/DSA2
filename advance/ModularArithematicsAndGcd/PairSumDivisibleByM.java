@@ -53,7 +53,7 @@ public class PairSumDivisibleByM {
         int B = 2;
 
         bruteForce(A, B);
-
+        optimized(A, B);
     }
 
     public  static void bruteForce (ArrayList<Integer> A, int B){
@@ -100,6 +100,9 @@ public class PairSumDivisibleByM {
 
         int ans = res % mod;
 
+        System.out.println(ans);
 
+        // Time O(N);
+        // Space O(M);
     }
 }
