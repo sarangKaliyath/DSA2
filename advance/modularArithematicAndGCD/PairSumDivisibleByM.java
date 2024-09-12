@@ -1,4 +1,4 @@
-package advance.ModularArithematicsAndGcd;
+package advance.modularArithematicAndGCD;
 
 import java.util.ArrayList;
 import java.util.Arrays;
