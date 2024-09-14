@@ -84,13 +84,12 @@ public class SubArrayWithZeroSum {
 
         for (int val : A) {
 
-            sum += (long) val;
+            sum += val;
 
-            if (hs.contains(sum)) return 1;
-
-            if (sum == 0) return 1;
+            if (hs.contains(sum) || sum == 0) return 1;
 
             hs.add(sum);
+
         }
 
         return 0;
