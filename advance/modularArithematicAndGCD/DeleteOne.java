@@ -78,6 +78,8 @@ public class DeleteOne {
 
         System.out.println(max);
 
+        // Time O ( N^2 * log Min(A[i],A[j]) );
+        // Space O( log(Math.min(A[i], A[j]) );
     }
 
     public  static  void optimized (ArrayList<Integer> A, int n){
@@ -105,6 +107,7 @@ public class DeleteOne {
         }
 
         System.out.println(max);
-
+        // Time O(N);
+        // Space O(N);
     }
 }
