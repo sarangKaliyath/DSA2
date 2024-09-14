@@ -40,25 +40,51 @@ import java.util.HashMap;
 
 public class FirstRepeatingElement {
 
-    public  static  void main (String [] args){
-
+    public static void main(String[] args) {
 
         ArrayList<Integer> A = new ArrayList<>(Arrays.asList(10, 5, 3, 4, 3, 5, 6));
 
+        firstApproach(A);
+
+        secondApproach(A);
+    }
+
+    public static void firstApproach(ArrayList<Integer> A) {
+
         HashMap<Integer, Integer> hm = new HashMap<>();
 
-        for(int el : A){
-            if(hm.containsKey(el)) hm.put(el, hm.get(el) + 1);
+        for (int el : A) {
+            if (hm.containsKey(el)) hm.put(el, hm.get(el) + 1);
             else hm.put(el, 1);
         }
 
         int res = -1;
 
-        for(int el : A) {
-            if(hm.get(el) > 1){
+        for (int el : A) {
+            if (hm.get(el) > 1) {
                 res = el;
                 break;
             }
+        }
+
+        System.out.println(res);
+
+    }
+
+    public  static  void secondApproach(ArrayList<Integer> A){
+
+        HashMap<Integer, Integer> hm = new HashMap<>();
+
+        int res = - 1;
+
+        for(int i = A.size() - 1; i >= 0; i--){
+
+            if(hm.containsKey(A.get(i))) {
+                res = A.get(i);
+            }
+
+            else hm.put(A.get(i), 1);
+
         }
 
         System.out.println(res);
