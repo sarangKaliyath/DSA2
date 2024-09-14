@@ -41,7 +41,7 @@ Explanation 2:
  */
 public class CountSubArrayZeroSum {
 
-    public  static  void main (String [] args){
+    public static void main(String[] args) {
 
         ArrayList<Integer> A = new ArrayList<>(Arrays.asList(-1, 2, -1));
         int n = A.size();
@@ -51,53 +51,54 @@ public class CountSubArrayZeroSum {
         optimized(A);
     }
 
-    public  static void bruteForce (ArrayList<Integer> A, int n){
+    public static void bruteForce(ArrayList<Integer> A, int n) {
 
         int count = 0;
 
-        for(int i = 0; i < n ; i++){
+        for (int i = 0; i < n; i++) {
 
             int sum = 0;
 
-            for(int j = i; j < n; j++){
+            for (int j = i; j < n; j++) {
 
-                sum+= A.get(j);
+                sum += A.get(j);
 
-                if(sum == 0) count++;
+                if (sum == 0) count++;
 
             }
 
         }
 
         System.out.println(count);
+        // Time O(N^2);
+        // Space O(1);
 
     }
 
-    public  static  void optimized(ArrayList<Integer> A){
+    public static void optimized(ArrayList<Integer> A) {
 
-        HashMap<Integer, Integer> hm = new HashMap<>();
+        HashMap<Long, Long> hm = new HashMap<>();
         int mod = (int) Math.pow(10, 9) + 7;
-        int count = 0;
 
-        int sum = 0;
+        long sum = 0;
+        long count = 0;
 
-        hm.put(0, 1);
+        hm.put(0L, 1L);
 
-        for(int el : A){
+        for (int el : A) {
 
             sum += el;
 
-            if(hm.containsKey(sum)){
-                count = (count + hm.get(sum)) % mod;
-            }
-            else {
-                hm.put(sum, 0);
-            }
-
-            hm.put(sum, hm.get(sum) + 1);
+            if (hm.containsKey(sum)) {
+                count += hm.get(sum);
+                hm.put(sum, hm.get(sum) + 1);
+            } else hm.put(sum, 1L);
 
         }
 
-        System.out.println(count);
+        System.out.println((int) count % mod);
+
+        // Time O(N);
+        // Space O(N);
     }
 }
