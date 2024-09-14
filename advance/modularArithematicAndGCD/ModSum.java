@@ -7,7 +7,7 @@ import java.util.Arrays;
 Problem Description
 Given an array of integers A,
 calculate the sum of A [ i ] % A [ j ] for all possible i, j pairs.
-Return sum % (109 + 7) as an output.
+Return sum % (10^9 + 7) as an output.
 
 Problem Constraints
 1 <= length of the array A <= 10^5
