@@ -58,6 +58,8 @@ public class CheckPairSum {
 
         int res = optimized(A, B);
         System.out.println(res);
+        // Time O(N);
+        // Space O(N);
 
     }
 
