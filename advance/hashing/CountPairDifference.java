@@ -69,6 +69,8 @@ public class CountPairDifference {
         }
 
         System.out.println(count);
+        // Time O(N^2);
+        // Space O(1);
 
     }
 
@@ -95,6 +97,8 @@ public class CountPairDifference {
         }
 
         System.out.println(count);
+        // Time O(N);
+        // Space O(N);
 
     }
 }
