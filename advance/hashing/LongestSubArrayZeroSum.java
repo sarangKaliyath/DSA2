@@ -79,7 +79,7 @@ public class LongestSubArrayZeroSum {
         long subArraySum = 0;
         long subArrayLen = 0;
 
-        for(int i = 0; i < A.size(); i++){
+        for(int i = 0; i < n; i++){
 
             subArraySum+= A.get(i);
 
@@ -97,6 +97,8 @@ public class LongestSubArrayZeroSum {
 
 
         System.out.println(subArrayLen);
+        // Time O(N):
+        // Space O(N);
 
     }
 }

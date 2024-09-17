@@ -65,9 +65,13 @@ public class DistinctNumbersInWindow {
 
         ArrayList<Integer> res = bruteForce(A, B);
         System.out.println(res);
+        // Time O(N * B);
+        // Space O(N);
 
         ArrayList<Integer> val = optimized(A, B);
         System.out.println(val);
+        // Time O(N);
+        // Space O(N);
     }
 
     public static ArrayList<Integer> bruteForce(ArrayList<Integer> A, int B) {
