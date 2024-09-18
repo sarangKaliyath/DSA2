@@ -48,7 +48,8 @@ public class MergeTwoSortedArrays {
         ArrayList<Integer> res = mergeSortedArrays(A, B);
 
         System.out.println(res);
-
+        // Time O(N1 + N2);
+        // Space O(N1 + N2);
     }
 
     public  static  ArrayList<Integer> mergeSortedArrays (ArrayList<Integer> A, ArrayList<Integer> B){
