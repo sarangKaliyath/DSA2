@@ -81,19 +81,17 @@ public class CountPairSum {
     public static void optimized(ArrayList<Integer> A, int B) {
 
         int mod = (int) Math.pow(10, 9) + 7;
+
         HashMap<Integer, Integer> hm = new HashMap<>();
+        int count = 0;
 
-        long count = 0;
+        for (int el : A) {
 
-        for (int i : A) {
+            int diff = B - el;
 
-            if (hm.containsKey(B - i)) count = (count + hm.get(B - i)) % mod;
+            if (hm.containsKey(diff)) count = (count + hm.get(diff)) % mod;
 
-            if (hm.containsKey(B)) hm.put(B, hm.get(B) + 1);
-
-            if (hm.containsKey(i)) hm.put(i, hm.get(i) + 1);
-
-            else hm.put(i, 1);
+            hm.put(el, hm.getOrDefault(el, 0) + 1);
 
         }
 
