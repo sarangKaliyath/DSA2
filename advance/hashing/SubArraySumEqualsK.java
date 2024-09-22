@@ -78,24 +78,28 @@ public class SubArraySumEqualsK {
 
     public static void optimized(ArrayList<Integer> A, int B) {
 
-        HashMap<Integer, Integer> hs = new HashMap<>();
-        int count = 0;
+        int n = A.size();
 
-        int[] pf = new int[A.size()];
+        int count = 0;
+        HashMap<Integer, Integer> hm = new HashMap<>();
+
+        int[] pf = new int[n];
         pf[0] = A.get(0);
 
-        for (int i = 1; i < A.size(); i++) {
-            pf[i] = pf[i - 1] + A.get(i);
+        for (int i = 1; i < n; i++) {
+            pf[i] = A.get(i) + pf[i - 1];
         }
 
         for (int el : pf) {
 
-            if(hs.containsKey(el - B)) count += hs.get(el - B);
+            if (el == B) count++;
 
-            if(el == B) count++;
+            int diff = el - B;
 
-            if(hs.containsKey(el)) hs.put(el, hs.get(el) + 1);
-            else hs.put(el, 1);
+            if (hm.containsKey(diff)) count += hm.get(diff);
+
+            if (hm.containsKey(el)) hm.put(el, hm.get(el) + 1);
+            else hm.put(el, 1);
 
         }
 
