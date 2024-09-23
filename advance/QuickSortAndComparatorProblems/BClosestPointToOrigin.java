@@ -74,8 +74,6 @@ public class BClosestPointToOrigin {
         int B = 1;
         int n = A.size();
 
-        B = B > n ?  n : B;
-
         ArrayList<HashMap<Integer, Integer>> res = new ArrayList<>();
 
         for(int i = 0; i < n; i++){
@@ -108,7 +106,6 @@ public class BClosestPointToOrigin {
             HashMap<Integer, Integer> hm = res.get(i);
 
             int index = hm.keySet().iterator().next();
-            int val = hm.get(index);
 
             out.add(A.get(index));
 
